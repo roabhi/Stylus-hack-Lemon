@@ -1,0 +1,7 @@
+@import url('./fonts/poppins.css');
+
+html,
+body {
+  font: 'Poppins', sans-serif;
+  font-weight: 400;
+}

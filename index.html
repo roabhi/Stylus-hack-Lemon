@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Function Registry 2 registry</title>
+  </head>
+  <body>
+    <h1 class="text-center mt-[6rem] text-3xl poppins-semibold text-blue-500">
+      Arbitrum Stylus C - FunctionRegistry to Playground ABI
+    </h1>
+    <main class="flex flex-col jusity-center mt-[3rem]">
+      <section
+        class="max-w-[50rem] w-full flex jusity-center content-center align-center mx-auto"
+      >
+        <div class="w-1/2 p-2">
+          <h3 class="text-center">Place your C code here</h3>
+          <textarea
+            class="w-full bg-zinc-50"
+            name=""
+            id="cCodeInput"
+            rows="20"
+          ></textarea>
+        </div>
+        <div class="w-1/2 p-2">
+          <h3 id="copyBtn" class="text-center">Copy me!</h3>
+          <textarea
+            class="w-full bg-zinc-50"
+            name=""
+            id="cCodeOutput"
+            rows="20"
+          ></textarea>
+        </div>
+      </section>
+      <input
+        class="w-[10rem] mx-auto bg-blue-500 rounded-full mt-[3rem] text-white p-3 cursor-pointer poppins-semibold hover:bg-blue-400"
+        type="submit"
+        value="Compile"
+        id="compile-btn"
+      />
+    </main>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/modules/parser.js" type="module"></script>
+  </body>
+</html>
