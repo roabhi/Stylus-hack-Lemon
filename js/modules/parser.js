@@ -70,7 +70,7 @@ export const parseCCode = (_code) => {
 
     const paramsString = firstParamType ? `${firstParamType}` : ''
 
-    return `function ${functionName}(${paramsString}) view returns (${returnType})`
+    return `"function ${functionName}(${paramsString}) view returns (${returnType})"`
   })
 
   return solidityFunctions.filter(Boolean)

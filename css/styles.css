@@ -7,6 +7,24 @@ body {
   font-weight: 400;
 }
 
+header {
+  position: fixed;
+  width: 95%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 2rem 0;
+  background: rgba(255, 255, 255, 0.5) none;
+  z-index: 10;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
 header > div > div {
   width: 2.5rem;
   height: 2.5rem;
@@ -30,10 +48,15 @@ nav li {
 
 div#info {
   display: none;
+  margin: 3rem 0;
 }
 
 div#info.show {
   display: block;
+}
+
+main {
+  margin: 12rem 0 0 0;
 }
 
 div.field-holder {
