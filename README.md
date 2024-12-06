@@ -54,8 +54,21 @@ int handler(size_t argc)
 
 ```
 
-For the hackathon only simple view functions work. If you want to add more
+After using the util you can directly paste your ABI in the `playground/index.ts` file. For the example avobe you will get something like this
+
+```
+
+const ABI = parseAbi([
+  "function hola_mundo() view returns (string)",
+  "function calldata_len() view returns (uint256)",
+  "function ping_pong(bytes32) view returns (string)",
+])
+
+
+```
+
+For the hackathon only simple functions work. If you want to add more
 type mappings from C to Solidity feel free to fork the repo and edit the
 mappings included in the
 `js/modules/parse.js ` either for types
-or Stylus based return functions.
+or Stylus based return utils functions.
