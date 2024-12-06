@@ -1,13 +1,22 @@
 import { parseCCode } from './modules/parser.js'
+import {
+  checkEntryPoint,
+  checkRegisterFunctionArray,
+} from './modules/checker.js'
 
-const onPasteClick = (e) => {
+const onInfoExpanderClick = (e) => {
+    const myInfo = document.getElementById('info')
+
+    !myInfo.classList.contains('show')
+      ? myInfo.classList.add('show')
+      : myInfo.classList.remove('show')
+  },
+  onPasteClick = (e) => {
     const textAreaTarget = document.getElementById('cCodeInput')
 
-    // Use the Clipboard API to read text from the clipboard
     navigator.clipboard
       .readText()
       .then((text) => {
-        // Set the text into the textarea
         textAreaTarget.value = text
       })
       .catch((err) => {
@@ -18,22 +27,19 @@ const onPasteClick = (e) => {
   onCopyClick = (e) => {
     var textarea = document.getElementById('cCodeOutput')
 
-    // Select the text in the textarea
     textarea.select()
-    textarea.setSelectionRange(0, 99999) // For mobile devices
+    textarea.setSelectionRange(0, 99999)
 
-    // Copy the text to the clipboard
     document.execCommand('copy')
 
-    // Optional: Alert the user that the content was copied
     alert('Text copied to clipboard!')
   },
   onCompileClick = (e) => {
     const cCode = document.getElementById('cCodeInput').value
 
-    // TODO make a pre parse looking for an ENTRYPOINT() keyword
+    checkEntryPoint(cCode)
 
-    // TODO make a pre parse looking for a FunctionRegistry registry[] = { .. } code
+    checkRegisterFunctionArray(cCode)
 
     document.getElementById('cCodeOutput').value = parseCCode(cCode)
   },
@@ -51,6 +57,10 @@ const onPasteClick = (e) => {
     document
       .getElementById('pasteBtn')
       .addEventListener('click', onPasteClick, false)
+
+    document
+      .getElementById('about-expander')
+      .addEventListener('click', onInfoExpanderClick, false)
   }
 
 document.addEventListener('DOMContentLoaded', init, false)

@@ -18,41 +18,58 @@
     <title>Function Registry 2 registry</title>
   </head>
   <body>
-    <h1 class="text-center mt-[6rem] text-3xl poppins-semibold text-blue-500">
-      Arbitrum Stylus C - FunctionRegistry to Playground ABI
-    </h1>
-    <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
-      This is an utlity created for the
-      <a
-        href="https://hack.lemon.tips/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-blue-500 underline"
-        >Arbitrum Stylus Hackathon by Lemon</a
-      >
-      based
-      <a
-        href="https://github.com/D3Portillo/arbitrum-sylus-starter-c"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-blue-500 underline"
-        >on this starter template by Denni Portillo</a
-      >
-      willing to improve the Arbitrum Stylus toolset for the C language.
-    </p>
-    <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
-      This utility will parse your C based smart contract and give you the ABI
-      code you can paste directly into your playground typescript template so
-      you can start testing your code right away.
-    </p>
-    <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
-      For the hackathon only simple view functions work. If you want to add more
-      type mappings from C to Solidity feel free to fork the repo and edit the
-      mappings included in the
-      <code class="space-mono-bold">js/modules/parse.js</code> either for types
-      or Stylus based return functions.
-    </p>
-    <main <main class="flex flex-col jusity-center mt-[3rem]">
+    <header class="mt-[6rem]">
+      <div class="flex justify-center align-center items-center">
+        <div></div>
+        <h1
+          class="text-center text-[1.5rem] poppins-semibold text-[#213147] ml-[1rem]"
+        >
+          Arbitrum Stylus C - FunctionRegistry to ABI Playground
+        </h1>
+      </div>
+      <nav>
+        <li
+          id="about-expander"
+          class="w-[8rem] mx-auto bg-[#213147] rounded-full text-white p-3 cursor-pointer poppins-semibold text-[0.813rem] hover:opacity-50"
+        >
+          about
+        </li>
+      </nav>
+      <div id="info">
+        <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
+          This is an utlity created for the
+          <a
+            href="https://hack.lemon.tips/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-500 underline"
+            >Arbitrum Stylus Hackathon by Lemon</a
+          >
+          based
+          <a
+            href="https://github.com/D3Portillo/arbitrum-sylus-starter-c"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-500 underline"
+            >on this starter template by Denni Portillo</a
+          >
+          willing to improve the Arbitrum Stylus toolset for the C language.
+        </p>
+        <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
+          This utility will parse your C based smart contract and give you the
+          ABI code you can paste directly into your playground typescript
+          template so you can start testing your code right away.
+        </p>
+        <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
+          For the hackathon only simple view functions work. If you want to add
+          more type mappings from C to Solidity feel free to fork the repo and
+          edit the mappings included in the
+          <code class="space-mono-bold">js/modules/parse.js</code> either for
+          types or Stylus based return functions.
+        </p>
+      </div>
+    </header>
+    <main class="flex flex-col jusity-center mt-[3rem]">
       <section
         class="max-w-[50rem] w-full flex jusity-center content-center align-center mx-auto"
       >
@@ -86,7 +103,7 @@
         </div>
       </section>
       <input
-        class="w-[10rem] mx-auto bg-blue-500 rounded-full mt-[3rem] text-white p-3 cursor-pointer poppins-semibold hover:bg-blue-400"
+        class="w-[10rem] mx-auto bg-[#E3066E] rounded-full mt-[3rem] mb-[6rem] text-white p-3 cursor-pointer poppins-semibold hover:opacity-50"
         type="submit"
         value="Get ABI"
         id="compile-btn"
