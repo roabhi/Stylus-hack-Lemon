@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Function Registry 2 registry</title>
@@ -17,23 +21,64 @@
     <h1 class="text-center mt-[6rem] text-3xl poppins-semibold text-blue-500">
       Arbitrum Stylus C - FunctionRegistry to Playground ABI
     </h1>
-    <main class="flex flex-col jusity-center mt-[3rem]">
+    <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
+      This is an utlity created for the
+      <a
+        href="https://hack.lemon.tips/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 underline"
+        >Arbitrum Stylus Hackathon by Lemon</a
+      >
+      based
+      <a
+        href="https://github.com/D3Portillo/arbitrum-sylus-starter-c"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 underline"
+        >on this repo by Denni Portillo</a
+      >
+      willing to improve the Arbitrum Stylus toolset for the C language.
+    </p>
+    <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
+      This utility will parse your C based smart contract and give you the ABI
+      code you can paste directly into your playground typescript template so
+      you can start testing your code right away.
+    </p>
+    <p class="text-center mt-[2rem] poppins-regular max-w-[50rem] mx-auto">
+      For the hackathon only simple view functions work. If you want to add more
+      type mappings from C to Solidity feel free to fork the repo and edit the
+      mappings included in the
+      <code class="space-mono-bold">js/modules/parse.js</code> either for types
+      or Stylus based return functions.
+    </p>
+    <main <main class="flex flex-col jusity-center mt-[3rem]">
       <section
         class="max-w-[50rem] w-full flex jusity-center content-center align-center mx-auto"
       >
-        <div class="w-1/2 p-2">
-          <h3 class="text-center">Place your C code here</h3>
+        <div class="w-1/2 p-2 field-holder">
+          <h3
+            id="pasteBtn"
+            class="text-center space-mono-bold text-[0.75rem] bg-zinc-700 py-2 px-4 text-white rounded-full"
+          >
+            Click to paste
+          </h3>
           <textarea
-            class="w-full bg-zinc-50"
+            class="w-full bg-zinc-100 space-mono-regular font-[0.875rem]"
             name=""
             id="cCodeInput"
             rows="20"
           ></textarea>
         </div>
-        <div class="w-1/2 p-2">
-          <h3 id="copyBtn" class="text-center">Copy me!</h3>
+        <div class="w-1/2 p-2 field-holder">
+          <h3
+            id="copyBtn"
+            class="ttext-center space-mono-bold text-[0.75rem] bg-zinc-700 py-2 px-4 text-white rounded-full"
+          >
+            Copy me!
+          </h3>
           <textarea
-            class="w-full bg-zinc-50"
+            class="w-full bg-zinc-100 space-mono-regular font-[0.875]"
             name=""
             id="cCodeOutput"
             rows="20"
@@ -43,7 +88,7 @@
       <input
         class="w-[10rem] mx-auto bg-blue-500 rounded-full mt-[3rem] text-white p-3 cursor-pointer poppins-semibold hover:bg-blue-400"
         type="submit"
-        value="Compile"
+        value="Get ABI"
         id="compile-btn"
       />
     </main>

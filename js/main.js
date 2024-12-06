@@ -1,6 +1,21 @@
 import { parseCCode } from './modules/parser.js'
 
-const onCopyClick = (e) => {
+const onPasteClick = (e) => {
+    const textAreaTarget = document.getElementById('cCodeInput')
+
+    // Use the Clipboard API to read text from the clipboard
+    navigator.clipboard
+      .readText()
+      .then((text) => {
+        // Set the text into the textarea
+        textAreaTarget.value = text
+      })
+      .catch((err) => {
+        console.error('Failed to read clipboard contents: ', err)
+        alert('Unable to paste from clipboard. Check permissions.')
+      })
+  },
+  onCopyClick = (e) => {
     var textarea = document.getElementById('cCodeOutput')
 
     // Select the text in the textarea
@@ -32,6 +47,10 @@ const onCopyClick = (e) => {
     document
       .getElementById('copyBtn')
       .addEventListener('click', onCopyClick, false)
+
+    document
+      .getElementById('pasteBtn')
+      .addEventListener('click', onPasteClick, false)
   }
 
 document.addEventListener('DOMContentLoaded', init, false)
